@@ -1,0 +1,97 @@
+<?php
+/**
+ * Interswitch Extension
+ *
+ * DISCLAIMER
+ * This file will not be supported if it is modified.
+ *
+ * @category   Interswitch
+ * @author     Interswitch
+ * @package    Interswitch
+ * @copyright  Copyright (c) 2017 Interswitch. (https://www.interswitch.com/)
+ * @license    https://raw.githubusercontent.com/InterswitchHQ/interswitch-magento/master/LICENSE   MIT License (MIT)
+ */
+
+$params = Mage::helper('interswitch_pay')->getFormParams();
+
+// only show popup if parameters were found
+if(!$params){
+  echo '<p style="color:red">Something went wrong. Check your Interswitch payment gateway settings.</p>';
+}
+elseif(!isset($params["merchant_code"]) ||  $params["merchant_code"] == '' || $params["merchant_code"] == null ){
+  echo '<p style="color:red">Interswitch Merchant Code not set. Check your Interswitch payment gateway settings.</p>';
+}
+elseif(!isset($params["terminal_id"]) ||  $params["terminal_id"] == '' || $params["terminal_id"] == null ){
+  echo '<p style="color:red"> Interswitch '.$params["terminal_id"].' Terminal ID not set. Check your Interswitch payment gateway settings.</p>';
+
+}
+elseif(!isset($params["domain"]) ||  $params["domain"] == '' || $params["domain"] == null ){
+  echo '<p style="color:red"> Interswitch '.$params["domain"].' Domain not set. Check your Interswitch payment gateway settings.</p>';
+
+}
+elseif(!isset($params["client_id"]) ||  $params["client_id"] == '' || $params["client_id"] == null ){
+  echo '<p style="color:red"> Interswitch '.$params["client_id"].' Client ID not set. Check your Interswitch payment gateway settings.</p>';
+
+}
+
+elseif(!isset($params["client_secret"]) ||  $params["client_secret"] == '' || $params["client_secret"] == null ){
+  echo '<p style="color:red"> Interswitch '.$params["client_secret"].' Client ID not set. Check your Interswitch payment gateway settings.</p>';
+
+}
+else{
+
+
+
+?>
+
+<div style="width:100%; margin:auto">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas gravida lectus velit, non dignissim eros sodales eget. Nulla non nunc molestie, varius felis hendrerit, malesuada felis.
+
+
+<br>
+
+<br>
+
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+
+<script>console.log('<?php echo $params["nextUrl"]; ?>');</script>
+<a data-isw-payment-button data-isw-ref='<?php echo $params["merchant_code"]; ?>' >
+  <script type='text/javascript'
+    src='<?php echo $params["gateway_script"]; ?>'
+
+  data-isw-transactionReference='<?php echo $params["reference"]; ?>'
+  data-isw-merchantCode='<?php echo $params["merchant_code"]; ?>'  
+  data-isw-currencyCode='<?php echo $params["currency"]; ?>'
+  data-isw-amount='<?php echo $params["amount"]; ?>'
+  data-isw-dateOfPayment= <?php echo date('Y-m-d\TH:i:s');?>
+  data-isw-orderId='<?php echo $params["orderId"]; ?>'
+  data-isw-terminalId='<?php echo $params["terminal_id"]; ?>'
+  data-isw-customerInfor='<?php echo $params["customerInfor"]; ?>'
+  data-isw-redirectUrl='<?php echo $params["nextUrl"]; ?>'
+  data-isw-domain='<?php echo $params["domain"]; ?>'
+  data-isw-narration='<?php echo $params["narration"]; ?>' 
+  data-isw-fee='<?php echo $params["fee"]; ?>'
+  data-isw-preauth='<?php echo $params["preauth"]; ?>'
+          >
+          </script>
+ </a>
+ </div>
+<script>
+
+
+  function confirmInterswitchPayment(response){ 
+    if(response.resp == '00'){
+      var callback_url = '<?php echo $params["nextUrl"]; ?>';
+    //   var decoded = callback_url.replace(/&amp;/g, '&');
+      window.location.href=callback_url;
+
+    }else{
+      alert(response.desc);
+    }
+  }
+</script>
+<?php
+}

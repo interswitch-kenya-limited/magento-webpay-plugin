@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Interswitch Extension
+ *
+ * DISCLAIMER
+ * This file will not be supported if it is modified.
+ *
+ * @category   Interswitch
+ * @author     Interswitch
+ * @package    Interswitch
+ * @copyright  Copyright (c) 2017 Interswitch. (https://www.interswitch.com/)
+ * @license    https://raw.githubusercontent.com/InterswitchHQ/interswitch-magento/master/LICENSE   MIT License (MIT)
+ */
+-->
+<config>
+  <modules>
+    <Interswitch_Pay>
+      <active>true</active>
+      <codePool>community</codePool>
+      <depends>
+        <Mage_Payment />
+      </depends>
+    </Interswitch_Pay>
+  </modules>
+</config>

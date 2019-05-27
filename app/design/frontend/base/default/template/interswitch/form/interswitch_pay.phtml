@@ -1,0 +1,31 @@
+<?php
+/**
+ * Interswitch Extension
+ *
+ * DISCLAIMER
+ * This file will not be supported if it is modified.
+ *
+ * @category   Interswitch
+ * @author     Interswitch
+ * @package    Interswitch
+ * @copyright  Copyright (c) 2017 Interswitch. (https://www.interswitch.com/)
+ * @license    https://raw.githubusercontent.com/InterswitchHQ/interswitch-magento/master/LICENSE   MIT License (MIT)
+ */
+
+?>
+
+<div class="form-list" id="payment_form_<?php echo $this->getMethodCode() ?>" style="display:none;">
+    <?php echo $this->__('You will be provided with these payment options when you place an order') ?><br/>
+    <br>
+
+    <img style="height: 26px;width: 46px; float:left;" src="<?php echo $this->getSkinUrl('interswitch/images/verve.png');?>"/>
+    <img style="height:28px; width:53px; margin-left: 20px;margin-right:20px;   float:left;" src="<?php echo $this->getSkinUrl('interswitch/images/mastercardsecurecode.png');?>"/>
+    <img style="height:24px; width:55px;  " src="<?php echo $this->getSkinUrl('interswitch/images/verified-by-visa.png');?>"/>
+    <br> <br>
+    <img style="height: 24px; width: 45px; margin-left: 2px;  float:left;" src="<?php echo $this->getSkinUrl('interswitch/images/mpesa.png');?>"/>
+    <img style="height: 14px; width: 48px; margin-left: 20px;  float:left;" src="<?php echo $this->getSkinUrl('interswitch/images/eazzypay.png');?>"/>
+    <img style="height: 26px; width: 48px; margin-left: 20px;  float:left;" src="<?php echo $this->getSkinUrl('interswitch/images/tcash.png');?>"/>
+</div>
+<div>
+    <?php echo $this->getMethod()->getConfigData('message');?>
+</div>

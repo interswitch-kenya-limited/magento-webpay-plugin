@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * interswitch Extension
+ *
+ * DISCLAIMER
+ * This file will not be supported if it is modified.
+ *
+ * @category   interswitch
+ * @author     interswitch
+ * @package    interswitch
+ * @copyright  Copyright (c) 2017 interswitch. (https://www.interswitch.com/)
+ * @license    https://raw.githubusercontent.com/interswitchHQ/interswitch-magento/master/LICENSE   MIT License (MIT)
+ */
+-->
+<config>
+  <modules>
+    <Interswitch_Pay>
+      <version>1.0.0</version>
+    </Interswitch_Pay>
+  </modules>
+
+  <global>
+
+    <helpers>
+      <interswitch_pay>
+        <class>Interswitch_Pay_Helper</class>
+      </interswitch_pay>
+    </helpers>
+
+    <blocks>
+      <interswitch_pay>
+        <class>Interswitch_Pay_Block</class>
+      </interswitch_pay>
+    </blocks>
+
+    <models>
+      <interswitch_pay>
+        <class>Interswitch_Pay_Model</class>
+      </interswitch_pay>
+    </models>
+
+    <resources>
+      <interswitch_pay_setup>
+        <setup>
+          <module>Interswitch_Pay</module>
+        </setup>
+      </interswitch_pay_setup>
+    </resources>
+  </global>
+
+  <default>
+    <payment>
+      <interswitch_pay>
+        <active>1</active>
+        <model>interswitch_pay/paymentmethod</model>
+        <order_status>pending</order_status>
+        <terminal_id>3TLP0001</terminal_id>
+        <title>Interswitch Payment Gateway</title>
+        <allowspecific>0</allowspecific>
+        <test_mode>1</test_mode>
+        <use_standard>0</use_standard>
+        <domain>ISWKE</domain>
+        <merchant_code>ISWKEN0001</merchant_code>
+        <client_id>IKIAB8FA9382D1FAC6FCA2F30195029B0A1558A9FECA</client_id>
+        <client_secret>dxdmtf12FhLVIFRz8IzhnuAJzNd6AAFVgx/3LlJHc+4=</client_secret>
+  
+        <payment_action>sale</payment_action>
+      </interswitch_pay>
+    </payment>
+  </default>
+
+  <frontend>
+    <routers>
+      <interswitch>
+        <use>standard</use>
+        <args>
+          <module>Interswitch_Pay</module>
+          <frontName>interswitch</frontName>
+        </args>
+      </interswitch>
+    </routers>
+  </frontend>
+</config>
