@@ -5,12 +5,6 @@
  *
  * DISCLAIMER
  * This file will not be supported if it is modified.
- *
- * @category   interswitch
- * @author     interswitch
- * @package    interswitch
- * @copyright  Copyright (c) 2017 interswitch. (https://www.interswitch.com/)
- * @license    https://raw.githubusercontent.com/interswitchHQ/interswitch-magento/master/LICENSE   MIT License (MIT)
  */
 -->
 <config>
@@ -55,15 +49,16 @@
         <active>1</active>
         <model>interswitch_pay/paymentmethod</model>
         <order_status>pending</order_status>
-        <terminal_id>3TLP0001</terminal_id>
-        <title>Interswitch Payment Gateway</title>
+        <terminal_id></terminal_id>
+        <title></title>
         <allowspecific>0</allowspecific>
         <test_mode>1</test_mode>
         <use_standard>0</use_standard>
         <domain>ISWKE</domain>
-        <merchant_code>ISWKEN0001</merchant_code>
-        <client_id>IKIAB8FA9382D1FAC6FCA2F30195029B0A1558A9FECA</client_id>
-        <client_secret>dxdmtf12FhLVIFRz8IzhnuAJzNd6AAFVgx/3LlJHc+4=</client_secret>
+        <merchant_code></merchant_code>
+        <client_id></client_id>
+        <client_secret></client_secret>
+        <icon_url></icon_url>
   
         <payment_action>sale</payment_action>
       </interswitch_pay>

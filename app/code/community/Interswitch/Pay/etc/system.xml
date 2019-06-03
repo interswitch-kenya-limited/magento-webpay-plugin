@@ -6,11 +6,7 @@
  * DISCLAIMER
  * This file will not be supported if it is modified.
  *
- * @category   interswitch_pay
- * @author     interswitch_pay
- * @package    interswitch_pay
- * @copyright  Copyright (c) 2017 interswitch_pay. (https://www.interswitch.com/)
- * @license    https://raw.githubusercontent.com/interswitch_payHQ/interswitch-magento/master/LICENSE   MIT License (MIT)
+
  */
 -->
 <config>
@@ -19,7 +15,7 @@
       <groups>
         <interswitch_pay translate="label" module="interswitch_pay">
           <label>Interswitch Payment Gateway</label>
-          <comment><![CDATA[<a href="https://www.interswitchgroup.com/paymentgateway" target="_blank">Click here to sign up for an Interswitch Account.</a>]]></comment>
+          <comment><![CDATA[<a href="https://merchant.interswitch-ke.com/" target="_blank">Click here to sign up for an Interswitch Account.</a>]]></comment>
           <sort_order>1</sort_order>
           <show_in_default>1</show_in_default>
           <show_in_website>1</show_in_website>
@@ -52,6 +48,18 @@
               <show_in_store>0</show_in_store>
               <sort_order>3</sort_order>
             </test_mode>
+            
+            <icon_url translate="label,comment">
+                <label>Icon URL</label>
+                <comment>Enter your icon url</comment>
+                <frontend_type>text</frontend_type>
+                <sort_order>1</sort_order>
+                <show_in_default>1</show_in_default>
+                <show_in_website>1</show_in_website>
+                <show_in_store>0</show_in_store>
+                <sort_order>6</sort_order>
+            </icon_url>
+
             <order_status translate="label">
               <label>New order status</label>
               <frontend_type>select</frontend_type>
@@ -95,17 +103,7 @@
                 <sort_order>6</sort_order>
             </domain>
 
-             <icon_url translate="label,comment">
-                <label>Icon URL</label>
-                <comment>Enter your icon url</comment>
-                <frontend_type>text</frontend_type>
-                <sort_order>1</sort_order>
-                <show_in_default>1</show_in_default>
-                <show_in_website>1</show_in_website>
-                <show_in_store>1</show_in_store>
-                <sort_order>6</sort_order>
-            </icon_url>
-
+      
 
                <client_id translate="label,comment">
                 <label>Client ID</label>

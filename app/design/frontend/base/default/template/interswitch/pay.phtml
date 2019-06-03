@@ -5,11 +5,7 @@
  * DISCLAIMER
  * This file will not be supported if it is modified.
  *
- * @category   Interswitch
- * @author     Interswitch
- * @package    Interswitch
- * @copyright  Copyright (c) 2017 Interswitch. (https://www.interswitch.com/)
- * @license    https://raw.githubusercontent.com/InterswitchHQ/interswitch-magento/master/LICENSE   MIT License (MIT)
+ 
  */
 
 $params = Mage::helper('interswitch_pay')->getFormParams();
@@ -35,7 +31,7 @@ elseif(!isset($params["client_id"]) ||  $params["client_id"] == '' || $params["c
 }
 
 elseif(!isset($params["client_secret"]) ||  $params["client_secret"] == '' || $params["client_secret"] == null ){
-  echo '<p style="color:red"> Interswitch '.$params["client_secret"].' Client ID not set. Check your Interswitch payment gateway settings.</p>';
+  echo '<p style="color:red"> Interswitch '.$params["client_secret"].' Client Secret not set. Check your Interswitch payment gateway settings.</p>';
 
 }
 else{
@@ -44,9 +40,8 @@ else{
 
 ?>
 
-<div style="width:100%; margin:auto">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas gravida lectus velit, non dignissim eros sodales eget. Nulla non nunc molestie, varius felis hendrerit, malesuada felis.
-
+<div style="width:100%;text-align:center; margin:auto">
+Click the PAY NOW button below to proceed with payment
 
 <br>
 
@@ -75,6 +70,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas gravida lectus
   data-isw-narration='<?php echo $params["narration"]; ?>' 
   data-isw-fee='<?php echo $params["fee"]; ?>'
   data-isw-preauth='<?php echo $params["preauth"]; ?>'
+  data_isw_icon_url='<?php echo $params["icon_url"]; ?>'
           >
           </script>
  </a>

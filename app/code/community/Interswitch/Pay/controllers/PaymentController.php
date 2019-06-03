@@ -5,11 +5,6 @@
  * DISCLAIMER
  * This file will not be supported if it is modified.
  *
- * @category   interswitch_pay
- * @author     interswitch_pay
- * @package    interswitch_pay
- * @copyright  Copyright (c) 2017 interswitch_pay. (https://www.interswitch_pay.com/)
- * @license    https://raw.githubusercontent.com/interswitch_payHQ/interswitch_pay-magento/master/LICENSE   MIT License (MIT)
  */
 
 class Interswitch_Pay_PaymentController extends Mage_Core_Controller_Front_Action

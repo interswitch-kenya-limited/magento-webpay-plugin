@@ -4,12 +4,6 @@
  *
  * DISCLAIMER
  * This file will not be supported if it is modified.
- *
- * @category   Interswitch
- * @author     Interswitch
- * @package    Interswitch
- * @copyright  Copyright (c) 2017 Interswitch. (https://www.interswitch.com/)
- * @license    https://raw.githubusercontent.com/InterswitchHQ/interswitch-magento/master/LICENSE   MIT License (MIT)
  */
 class Interswitch_Pay_Helper_Data extends Mage_Core_Helper_Abstract
 {
@@ -80,7 +74,7 @@ class Interswitch_Pay_Helper_Data extends Mage_Core_Helper_Abstract
            
 
         } else {
-            $url =  'https://testids.interswitch.co.ke:9080/api/v1/merchant/cards/transactions/'.$reference;
+            $url =  'https://esb.interswitch-ke.com:18082/api/v1/merchant/cards/transactions/'.$reference;
         }
        
 
@@ -177,7 +171,7 @@ class Interswitch_Pay_Helper_Data extends Mage_Core_Helper_Abstract
             'client_id' => trim(Mage::getStoreConfig(Interswitch_Pay_Helper_Data::XML_PATH_CLIENT_ID)),
             'client_secret' => trim(Mage::getStoreConfig(Interswitch_Pay_Helper_Data::XML_PATH_CLIENT_SECRET)),
             'customerInfor' =>$customerInfor,
-            'preauth' => "0",
+            'preauth' => "1",
             'fee' => "0"
             
 

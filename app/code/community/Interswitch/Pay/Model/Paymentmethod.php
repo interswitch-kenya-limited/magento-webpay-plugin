@@ -5,11 +5,6 @@
  * DISCLAIMER
  * This file will not be supported if it is modified.
  *
- * @category   Interswitch
- * @author     Interswitch
- * @package    Interswitch
- * @copyright  Copyright (c) 2017 Interswitch. (https://www.interswitch.com/)
- * @license    https://raw.githubusercontent.com/InterswitchHQ/interswitch-magento/master/LICENSE   MIT License (MIT)
  */
 class Interswitch_Pay_Model_Paymentmethod extends Mage_Payment_Model_Method_Abstract {
     protected $_code  = 'interswitch_pay';
