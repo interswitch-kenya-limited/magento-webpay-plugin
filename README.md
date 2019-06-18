@@ -22,5 +22,4 @@ This magento extension enables you to integrate Interswitch payments to your Mag
 7. Save the Configuration by clicking Save Config
 
 
-###DISCLAIMER
-This extension will not be supported if it is modified. 
+
