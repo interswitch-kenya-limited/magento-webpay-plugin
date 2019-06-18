@@ -13,6 +13,7 @@ class Interswitch_Pay_Helper_Data extends Mage_Core_Helper_Abstract
     const XML_PATH_MERCHANT_CODE  = 'payment/interswitch_pay/merchant_code';
     const XML_PATH_TERMINAL_ID ='payment/interswitch_pay/terminal_id';
     const XML_PATH_DOMAIN ='payment/interswitch_pay/domain';
+    const XML_PATH_PREAUTH ='payment/interswitch_pay/preauth';
     const XML_PATH_ICON_URL ='payment/interswitch_pay/icon_url';
     const XML_PATH_CLIENT_ID ='payment/interswitch_pay/client_id';
     const XML_PATH_CLIENT_SECRET ='payment/interswitch_pay/client_secret';
@@ -91,8 +92,7 @@ class Interswitch_Pay_Helper_Data extends Mage_Core_Helper_Abstract
         $httpmethod='GET';
         $authorization = 'InterswitchAuth '.base64_encode($clientID);
         $contentType='application/json';
-        echo $authorization;
-
+   
 
         $curl=curl_init();
         curl_setopt($curl, CURLOPT_HTTPHEADER, array(
@@ -123,7 +123,7 @@ class Interswitch_Pay_Helper_Data extends Mage_Core_Helper_Abstract
 
 
         $result =  json_decode($response);
-       // echo $result;
+       //echo $result;
         $order_status = Mage::getStoreConfig(Interswitch_Pay_Helper_Data::XML_PATH_ORDER_STATUS);
         $result->order_status = $order_status;
 
@@ -171,7 +171,7 @@ class Interswitch_Pay_Helper_Data extends Mage_Core_Helper_Abstract
             'client_id' => trim(Mage::getStoreConfig(Interswitch_Pay_Helper_Data::XML_PATH_CLIENT_ID)),
             'client_secret' => trim(Mage::getStoreConfig(Interswitch_Pay_Helper_Data::XML_PATH_CLIENT_SECRET)),
             'customerInfor' =>$customerInfor,
-            'preauth' => "1",
+            'preauth' => trim(Mage::getStoreConfig(Interswitch_Pay_Helper_Data::XML_PATH_PREAUTH)),
             'fee' => "0"
             
 

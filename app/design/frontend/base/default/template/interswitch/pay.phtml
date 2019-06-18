@@ -33,8 +33,14 @@ elseif(!isset($params["client_id"]) ||  $params["client_id"] == '' || $params["c
 elseif(!isset($params["client_secret"]) ||  $params["client_secret"] == '' || $params["client_secret"] == null ){
   echo '<p style="color:red"> Interswitch '.$params["client_secret"].' Client Secret not set. Check your Interswitch payment gateway settings.</p>';
 
+}elseif(!isset($params["preauth"]) ||  $params["preauth"] == '' || $params["preauth"] == null ){
+  echo '<p style="color:red"> Interswitch  Preauthorization Code not set. Check your Interswitch payment gateway settings.</p>';
+
 }
-else{
+elseif(!($params["preauth"] == "1" || $params["preauth"] =="0")){
+
+  echo '<p style="color:red">Invalid Interswitch Preauthorization Code. Check your Interswitch payment gateway settings</p>';
+}else{
 
 
 

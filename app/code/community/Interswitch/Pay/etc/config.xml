@@ -59,6 +59,7 @@
         <client_id></client_id>
         <client_secret></client_secret>
         <icon_url></icon_url>
+        <preauth></preauth>
   
         <payment_action>sale</payment_action>
       </interswitch_pay>

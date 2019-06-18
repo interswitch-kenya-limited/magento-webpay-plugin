@@ -55,6 +55,7 @@ class Interswitch_Pay_PaymentController extends Mage_Core_Controller_Front_Actio
     {
       
         $success = false;
+    
 
        // $orderId = $this->getRequest()->get("orderId");
         $reference = $this->getRequest()->get("reference");
@@ -108,7 +109,8 @@ class Interswitch_Pay_PaymentController extends Mage_Core_Controller_Front_Actio
         // verify transaction with interswitch_pay
         $amount = (int)$order->grand_total;
         $result =  Mage::helper('interswitch_pay')->verifyTransaction($reference);
-      // var_dump($result);
+        //var_dump($result);
+        //return;
         if($result->error)
         {
             Mage::getModel('adminnotification/inbox')->addMajor(

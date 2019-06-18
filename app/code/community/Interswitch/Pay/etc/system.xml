@@ -60,6 +60,19 @@
                 <sort_order>6</sort_order>
             </icon_url>
 
+            <preauth translate="label,comment">
+                <label>Preauthorization Code</label>
+                <comment>A value of 0 debits the customer outright, you will be unable to reverse the transaction if the order is not fulfilled. 
+A value of 1 reserves the amount in the customer account, you can reverse the transaction within 24 hours if you're unable to fulfill the order but will also need to complete the transaction to debit the account after order is fulfilled</comment>
+                <frontend_type>text</frontend_type>
+                <sort_order>1</sort_order>
+                <show_in_default>1</show_in_default>
+                <show_in_website>1</show_in_website>
+                <show_in_store>0</show_in_store>
+                <sort_order>6</sort_order>
+            </preauth>
+
+
             <order_status translate="label">
               <label>New order status</label>
               <frontend_type>select</frontend_type>
