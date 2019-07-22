@@ -81,6 +81,7 @@ class Interswitch_Pay_Helper_Data extends Mage_Core_Helper_Abstract
        
         $clientID=trim(Mage::getStoreConfig(Interswitch_Pay_Helper_Data::XML_PATH_CLIENT_ID));
         $clientSecret=trim(Mage::getStoreConfig(Interswitch_Pay_Helper_Data::XML_PATH_CLIENT_SECRET));
+        date_default_timezone_set("Africa/Nairobi");
         $timestamp=time();
         $nonce=Interswitch_Pay_Helper_Data::genNonce(20).$timestamp;
         $signatureText =  ($httpMethod."&".rawurlencode($url)."&".$timestamp."&".$nonce."&".$clientID."&".$clientSecret);
